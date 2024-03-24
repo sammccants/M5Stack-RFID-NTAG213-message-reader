@@ -203,9 +203,8 @@ String NTAG213Reader::readMessage() {
     messageTerminated = readNextTlvBlock(currentByte, bufferSize, buffer, fullMessageContent);
   }
 
-  // Halt PICC and stop encryption on PCD
+  // Put PICC into HALT state to keep it from being read again
   _mfrc522.PICC_HaltA();
-  _mfrc522.PCD_StopCrypto1();
 
   return fullMessageContent;
 }
