@@ -1,2 +1,4 @@
-# M5Stack-RFID-NTAG213-message-reader
-A bare-bones library for reading NTAG213 RFID tags using the M5Stack RFID2 unit
+# M5Stack RFID NTAG213 message reader
+This is a bare-bones library for reading NTAG213 RFID tags using the M5Stack RFID2 unit. It requires a version of arozcan's [MFRC522-I2C-Library](https://github.com/arozcan/MFRC522-I2C-Library) which has been [modified by M5Stack](https://github.com/m5stack/M5Stack/tree/master/examples/Unit/RFID_RC522), the files of which have been included for convenience. Based on the names of these, I am quite sure the library will also work with the original RFID unit, but I have not tested it.
+
+Note that this library is currently only capable of reading very specific tags / tag content: NTAG213 tags with single-record, Well-Known (TNF), Text (type) messages. Also note that it is enabling Serial with baud rate 115200, so if you're using Serial for something else, you'll need to either use this same baud rate or change the library's value (in the begin() function).
