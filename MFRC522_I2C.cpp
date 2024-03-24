@@ -2023,6 +2023,49 @@ bool MFRC522::PICC_IsNewCardPresent() {
   byte bufferATQA[2];
   byte bufferSize = sizeof(bufferATQA);
   byte result = PICC_RequestA(bufferATQA, &bufferSize);
+  // switch (result) {
+  //   case STATUS_OK:
+  //     Serial.print("yes: ");
+  //     Serial.println("STATUS_OK");
+  //     break;
+  //   case STATUS_COLLISION:
+  //     Serial.print("yes: ");
+  //     Serial.println("STATUS_COLLISION");
+  //     break;
+  //   case STATUS_ERROR:
+  //     Serial.print("no : ");
+  //     Serial.println("STATUS_ERROR");
+  //     break;
+  //   case STATUS_NO_ROOM:
+  //     Serial.print("no : ");
+  //     Serial.println("STATUS_NO_ROOM");
+  //     break;
+  //   case STATUS_INTERNAL_ERROR:
+  //     Serial.print("no : ");
+  //     Serial.println("STATUS_INTERNAL_ERROR");
+  //     break;
+  //   case STATUS_INVALID:
+  //     Serial.print("no : ");
+  //     Serial.println("STATUS_INVALID");
+  //     break;
+  //   case STATUS_CRC_WRONG:
+  //     Serial.print("no : ");
+  //     Serial.println("STATUS_CRC_WRONG");
+  //     break;
+  //   case STATUS_MIFARE_NACK:
+  //     Serial.print("no : ");
+  //     Serial.println("STATUS_MIFARE_NACK");
+  //     break;
+  //   case STATUS_TIMEOUT:
+  //     Serial.print("no : ");
+  //     Serial.println("STATUS_TIMEOUT");
+  //     break;
+  //   default:
+  //     Serial.print("no : ");
+  //     Serial.print("other: ");
+  //     Serial.println(result);
+  //     break;
+  // }
   return (result == STATUS_OK || result == STATUS_COLLISION);
 }  // End PICC_IsNewCardPresent()
 
